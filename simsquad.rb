@@ -5,21 +5,23 @@
 class Simsquad < Formula
   desc "Single-binary device-pool provisioner for parallel mobile QA."
   homepage "https://github.com/peuf0u/simsquad"
-  version "0.3.0"
+  version "0.4.0"
   license "MIT"
+
+  depends_on "peuf0u/tap/mobilecli"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/peuf0u/simsquad/releases/download/v0.3.0/simsquad_0.3.0_darwin_amd64.tar.gz"
-      sha256 "16aa3c10ac8749820b268ca1564c161db651127fff52d119b6c32cfd298cbc2f"
+      url "https://github.com/peuf0u/simsquad/releases/download/v0.4.0/simsquad_0.4.0_darwin_amd64.tar.gz"
+      sha256 "826f0455a8536865d32ff6a0181004fbad62cc8103be0ec14514fd61b00eb1b0"
 
       define_method(:install) do
         bin.install "simsquad"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/peuf0u/simsquad/releases/download/v0.3.0/simsquad_0.3.0_darwin_arm64.tar.gz"
-      sha256 "92e98c6ee1a58f755c754ec46635c46bef1e8656b993a2d82da44e128d467ed3"
+      url "https://github.com/peuf0u/simsquad/releases/download/v0.4.0/simsquad_0.4.0_darwin_arm64.tar.gz"
+      sha256 "940ef658e24140fd66d248b0a67c31852ef2fbb6c398c1d8bc164b567e0db5c1"
 
       define_method(:install) do
         bin.install "simsquad"
@@ -29,15 +31,15 @@ class Simsquad < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/peuf0u/simsquad/releases/download/v0.3.0/simsquad_0.3.0_linux_amd64.tar.gz"
-      sha256 "1265e855131068763cdd8e9892f9fa89714212082efff06af9608dcf4b4e9458"
+      url "https://github.com/peuf0u/simsquad/releases/download/v0.4.0/simsquad_0.4.0_linux_amd64.tar.gz"
+      sha256 "422a0c33c0b9795bf5f7c0ff4be2a4925d402615e40e1650d04b4ce34603e2b5"
       define_method(:install) do
         bin.install "simsquad"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/peuf0u/simsquad/releases/download/v0.3.0/simsquad_0.3.0_linux_arm64.tar.gz"
-      sha256 "8604ba35408d9c3f6d71d5ca6cc5c846b239b1e42d3e1688e99a2b13a2d0e555"
+      url "https://github.com/peuf0u/simsquad/releases/download/v0.4.0/simsquad_0.4.0_linux_arm64.tar.gz"
+      sha256 "78a9e306f53d3bbbd21a2de05230b81eef7ddfa8e3cc027e4f74d60e2e98d907"
       define_method(:install) do
         bin.install "simsquad"
       end
